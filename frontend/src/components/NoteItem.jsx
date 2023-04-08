@@ -2,9 +2,11 @@ import { Link } from "react-router-dom";
 
 const NoteItem = ({ note }) => {
   return (
-    <div>
-      <Link to={`/notes/${note.id}`}>{note.body}</Link>
-    </div>
+    <Link to={`/notes/${note.id}`}>
+      <div className="notes-list-item">
+        <h3>{note?.body}</h3>
+      </div>
+    </Link>
   );
 };
 
