@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 import NoteItem from "../components/NoteItem";
+import AddButton from "../components/AddButton";
 
 const NotesListPage = () => {
   const [notes, setNotes] = useState([]);
@@ -24,6 +25,7 @@ const NotesListPage = () => {
       {notes.map((note) => (
         <NoteItem key={note.created} note={note} />
       ))}
+      <AddButton />
     </div>
   );
 };
