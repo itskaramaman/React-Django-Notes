@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-ue6j%&c9xs^t1-!zg8l#wu(4r8y-gndh0=g51$18gf&%on83-a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://karamjeet-notescom-production.up.railway.app/', '127.0.01']
+ALLOWED_HOSTS = ['karamjeet-notes-production.up.railway.app/api/notes/', '127.0.0.1']
 
 
 # Application definition
