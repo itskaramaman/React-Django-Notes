@@ -17,7 +17,7 @@ const NotePage = () => {
 
   const getNote = async () => {
     if (noteId === "new") return;
-    const response = await axios.get(`/api/notes/${noteId}`);
+    const response = await axios.get(`/api/notes/${noteId}/`);
     setNote(response.data);
   };
 
@@ -25,7 +25,7 @@ const NotePage = () => {
     if (!note.body && noteId === "new") return;
     const csrftoken = getCookie("csrftoken");
     await axios.put(
-      `/api/notes/update/${noteId}`,
+      `/api/notes/${noteId}/`,
       {
         body: note.body,
       },
@@ -42,7 +42,7 @@ const NotePage = () => {
 
   const deleteNote = async () => {
     const csrftoken = getCookie("csrftoken");
-    await axios.delete(`/api/notes/delete/${noteId}`, {
+    await axios.delete(`/api/notes/${noteId}/`, {
       headers: {
         "content-type": "application/json",
         "X-CSRFToken": csrftoken,
@@ -55,7 +55,7 @@ const NotePage = () => {
   const createNote = async () => {
     const csrftoken = getCookie("csrftoken");
     await axios.post(
-      `/api/notes/new`,
+      `/api/notes/`,
       { body: note.body },
       {
         headers: {
